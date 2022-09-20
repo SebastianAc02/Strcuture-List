@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "cwd": "/Users/sebastianacosta/Desktop/C++Lab1",
+      "program": "/Users/sebastianacosta/Desktop/C++Lab1/build/Debug/outDebug",
+      "MIMode": "gdb"
+    }
+  ]
+}
