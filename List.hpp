@@ -7,7 +7,7 @@ using namespace std;
 
 //template <typename T>
 class List {
-private:
+protected:
 	int* list;
 	int length;
 
