@@ -11,7 +11,6 @@ public:
 	SortedList(int, int);
 	SortedList(int*, int);
 
-	void Sort();
 	int binarySearch( int target, int low, int high);
 
 	

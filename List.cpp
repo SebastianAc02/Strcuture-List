@@ -25,6 +25,21 @@ List::List(int n, int v) :length(n), list(new int[n]) {
 
 
 }
+List::List(List& li) { //Copy constructor
+	length = li.length;
+	list = new int[length];
+	for (int i = 0; i < length; i++)
+	{
+		list[i] = li[i];
+	}
+}
+
+List::List(List&& li) { //Move Constructor
+	length = li.length;
+	li.length = 0;
+	list = li.list;
+	li.list = nullptr;
+}
 List::~List() {
 	delete[] list;
 	list = nullptr;
@@ -69,34 +84,15 @@ void List::appendSeq(int* arr, int arrSize) {
 		append(arr[i]);
 	}
 
-	//int newSize = arrSize + length;
-	//int* tempList = new int[newSize];
-
-	//for (int i = 0; i < length; i++)
-	//{
-	//	tempList[i] = list[i]; //deep copy
-	//}
-	//for (int i = length; i < arrSize + length; i++)
-	//{
-	//	tempList[i] = arr[i];
-	//}
-
-	//delete[] list;
-	//list = nullptr;
-
-	//list = tempList;
-
-	//length = arrSize + length;
-
 }
 const int& List :: operator[](int index) const {
 	return list[index];
 }
 
 void List:: operator--(int) {
-	
-	int* tempList = new int[length-1];
-	for (int i = 0; i < length-1; i++)
+
+	int* tempList = new int[length - 1];
+	for (int i = 0; i < length - 1; i++)
 	{
 		tempList[i] = list[i]; //deep copy
 	}
@@ -107,13 +103,13 @@ void List:: operator--(int) {
 
 	length--;
 
-	
-	
+
+
 }
 
 void List:: operator+(int val) {
 
-	int* tempList = new int[length + 1]; 
+	int* tempList = new int[length + 1];
 	for (int i = 0; i < length; i++)
 	{
 		tempList[i] = list[i]; //deep copy
@@ -128,8 +124,41 @@ void List:: operator+(int val) {
 
 	length++;  //increase number of elements
 
-	//return List(list, length);
 
+
+}
+void List:: operator+(int* arr) {
+	/*for (int i = 0; i < (sizeof(arr)/sizeof (*arr)); i++)
+	{
+		append(arr[i]);
+	}*/
+
+
+
+}
+
+const List& List::operator=(const List& li) {
+	if (this != &li) {
+		length = li.length;
+		if (list != nullptr) {
+			delete[] list;
+		}
+		list = new int[li.length];
+		for (int i = 0; i < li.length; i++)
+		{
+			list[i] = li[i];
+		}
+	}
+
+	return *this;
+}
+
+List& List::operator=(List&& li) {
+	if (this != &li) {
+		swap(list, li.list);
+		swap(length, li.length);
+	}
+	return *this;
 }
 
 

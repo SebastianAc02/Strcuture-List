@@ -15,6 +15,8 @@ public:
 	List();
 	List(int, int);
 	List(int*, int);
+	List(List&);//copy constructor
+	List(List&&); //move constructor
 	~List();
 
 	void insert(int, int);
@@ -26,7 +28,11 @@ public:
 
 	void operator--(int);
 	void operator+(int);
+	void operator+(int*);
+	const List& operator=(const List&); //assignment operator
+	List& operator=(List&&);
 	const int& operator[](int) const;
+	
 	
 
 	friend ostream& operator<< (ostream& os, const List&);
