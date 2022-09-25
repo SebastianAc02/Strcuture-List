@@ -5,8 +5,6 @@ SortedList::SortedList(int* arr, int arrSize) : List(arr, arrSize) {}
 SortedList::SortedList(int n, int v) : List(n, v) {}
 
 
-
-
 // low should be index 0  and high is the array length 
 int SortedList::binarySearch(int target, int low, int high)
 {

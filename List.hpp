@@ -22,18 +22,26 @@ public:
 	void insert(int, int);
 	void append(int);
 	void appendSeq(int*, int);
-	void removeAt(int, int);
+	void removeFirstorAll(int);
+	void removeAt(int);
 	int GetLength() const;
 	void SetLength(int);
+<<<<<<< HEAD
+=======
+
+	void Sort();
+	int Search(int); //returns index it is located at
+
+>>>>>>> d54f4f8b76ff694bc1bcb59e4f99903584e39199
 	void operator-(int);
 	void operator--(int);
 	void operator+(int);
 	void operator+(int*);
 	const List& operator=(const List&); //assignment operator
-	List& operator=(List&&);
+	List& operator=(List&&); //move assignment operator
 	const int& operator[](int) const;
-	
-	
+
+
 
 	friend ostream& operator<< (ostream& os, const List&);
 	friend const istream& operator>> (istream& in, List&);

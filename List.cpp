@@ -55,9 +55,58 @@ void List::SetLength(int len) {
 void List::insert(int index, const int val) {
 	list[index] = val;
 }
-void List::removeAt(int index, int val) {
-	list[index] = list[length];
-	length--;
+void List::removeAt(int index) {
+	/*list[length] = list[index];
+	cout << list[length];
+	length--;*/
+
+	for (int i = 0; i < length; i++)
+	{
+		if (index == i) {
+			for (; i < length - 1; i++)
+			{
+				list[i] = list[i + 1];
+			}
+			list[length - 1] = 0;
+			length--;
+		}
+
+	}
+}
+
+void List::removeFirstorAll(int val) {
+	int input;
+	cout << "Remove first of an item enter 0 or Remove all occurences of an item enter 1\n";
+	cin >> input;
+
+	if (input == 0) {
+		for (int i = 0; i < length; i++)
+		{
+			if (list[i] == val) {
+				for (; i < length - 1; i++) //once it finds it, start at that index and then push it to the end
+				{
+					list[i] = list[i + 1];
+				}
+				list[length - 1] = 0;
+				length--;
+			}
+		}
+	}
+	else if (input == 1) { // NOT WORKING
+		for (int i = 0; i < length; i++)
+		{
+			if (list[i] == val) {
+				for (; i < length - 1; i++)
+				{
+					list[i] = list[i + 1];
+				}
+				list[length - 1] = 0;
+				length--;
+				i = 0; //reset to look through the list again to find if another element contains the value.
+			}
+
+		}
+	}
 }
 void List::append(int val) {
 	//Ex. original size of 10
@@ -86,11 +135,35 @@ void List::appendSeq(int* arr, int arrSize) {
 
 }
 
+void List::Sort() {
+	for (int i = 0; i < length; i++)
+	{
+		for (int j = 0; j < length - 1; j++)
+		{
+			if (list[j] > list[j + 1]) {
+				swap(list[j], list[j + 1]);
+			}
+		}
+	}
+}
 
+<<<<<<< HEAD
 
 void List::operator- (int ){
+=======
+int List::Search(int val) {
+	for (int i = 0; i < length; i++)
+	{
+		if (list[i] == val) {
+			return i;
+		}
+	}
+}
+>>>>>>> d54f4f8b76ff694bc1bcb59e4f99903584e39199
 
-	delete [] list;
+void List::operator- (int) {
+
+	delete[] list;
 	list = nullptr;
 	length = 0;
 }
