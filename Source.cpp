@@ -18,7 +18,7 @@ int main() {
 	int location = li.Search(55);
 	cout << "It is in position " << location << " of the List" << endl;
 
-	li.Sort();
+	//li.Sort();
 	cout << "Sorted List: " << li << endl;
 
 	cout << "Enter value to remove \n";

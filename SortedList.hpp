@@ -8,8 +8,9 @@ using namespace std;
 class SortedList: public List {
 
 private :
-	int partition(int arr[], int start, int end);
+//	int partition(int arr[], int start, int end);
 public:
+
 	SortedList();
 	SortedList(int, int);
 	SortedList(int*, int);
@@ -17,7 +18,7 @@ public:
 	
 	int binarySearch( int target, int low, int high);
 	
-	void quickSort(int arr[], int start, int end);
+	//void quickSort(int arr[], int start, int end);
 	
 };
 

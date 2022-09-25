@@ -32,7 +32,7 @@ int SortedList::binarySearch(int target, int low, int high)
 
 }
 
-int SortedList::partition(int arr[], int start, int end)
+/*int SortedList::partition(int arr[], int start, int end)
 {
  
     int pivot = arr[start];
@@ -66,9 +66,9 @@ int SortedList::partition(int arr[], int start, int end)
     }
  
     return pivotIndex;
-}
+}*/
 
-void SortedList::quickSort(int arr[], int start, int end)
+/*void SortedList::quickSort(int arr[], int start, int end)
 {
  
     // base case
@@ -83,4 +83,4 @@ void SortedList::quickSort(int arr[], int start, int end)
  
     // Sorting the right part
     quickSort(arr, p + 1, end);
-}
+}*/

@@ -286,7 +286,58 @@ const istream& operator >> (istream& in, List& x) {
 	return in;
 }
 
+int List::partition( int start, int end)
+{
+ 
+    int pivot = list[start];
+ 
+    int count = 0;
+    for (int i = start + 1; i <= end; i++) {
+        if (list[i] <= pivot)
+            count++;
+    }
+ 
+    // Giving pivot element its correct position
+    int pivotIndex = start + count;
+    swap(list[pivotIndex], list[start]);
+ 
+    // Sorting left and right parts of the pivot element
+    int i = start, j = end;
+ 
+    while (i < pivotIndex && j > pivotIndex) {
+ 
+        while (list[i] <= pivot) {
+            i++;
+        }
+ 
+        while (list[j] > pivot) {
+            j--;
+        }
+ 
+        if (i < pivotIndex && j > pivotIndex) {
+            swap(list[i++], list[j--]);
+        }
+    }
+ 
+    return pivotIndex;
+}
 
+void List::quickSort(int start, int end)
+{
+ 
+    // base case
+    if (start >= end)
+        return;
+ 
+    // partitioning the array
+    int p = partition( start, end);
+ 
+    // Sorting the left part
+    quickSort( start, p - 1);
+ 
+    // Sorting the right part
+    quickSort( p + 1, end);
+}
 
 
 
