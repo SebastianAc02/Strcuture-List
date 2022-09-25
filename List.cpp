@@ -31,11 +31,14 @@ List::~List() {
 }
 
 
-int List::GetLength() const{
+int List::GetLength() const {
 	return length;
 }
+void List::SetLength(int len) {
+	length = len;
+}
 void List::insert(int index, const int val) {
-
+	list[index] = val;
 }
 void List::removeAt(int index, int val) {
 	list[index] = list[length];
@@ -61,40 +64,80 @@ void List::append(int val) {
 	length++;  //increase number of elements
 }
 void List::appendSeq(int* arr, int arrSize) {
-	/*for (int i = 0; i < arrSize; i++)
+	for (int i = 0; i < arrSize; i++)
 	{
 		append(arr[i]);
-	}*/
-
-	int newSize = arrSize + length;
-	int* tempList = new int[newSize];
-
-	for (int i = 0; i < length; i++)
-	{
-		tempList[i] = list[i]; //deep copy
-	}
-	for (int i = length; i < arrSize + length; i++)
-	{
-		tempList[i] = arr[i];
 	}
 
-	delete[] list;
-	list = nullptr;
+	//int newSize = arrSize + length;
+	//int* tempList = new int[newSize];
 
-	list = tempList;
+	//for (int i = 0; i < length; i++)
+	//{
+	//	tempList[i] = list[i]; //deep copy
+	//}
+	//for (int i = length; i < arrSize + length; i++)
+	//{
+	//	tempList[i] = arr[i];
+	//}
 
-	length = arrSize + length;
+	//delete[] list;
+	//list = nullptr;
+
+	//list = tempList;
+
+	//length = arrSize + length;
 
 }
 const int& List :: operator[](int index) const {
 	return list[index];
 }
 
+void List:: operator--(int) {
+	
+	int* tempList = new int[length-1];
+	for (int i = 0; i < length-1; i++)
+	{
+		tempList[i] = list[i]; //deep copy
+	}
+	delete[] list;
+	list = nullptr;
+
+	list = tempList;
+
+	length--;
+
+	
+	
+}
+
+void List:: operator+(int val) {
+
+	int* tempList = new int[length + 1]; 
+	for (int i = 0; i < length; i++)
+	{
+		tempList[i] = list[i]; //deep copy
+	}
+	//Change original list to the tempList
+	delete[] list;
+	list = nullptr;
+
+	list = tempList;   //list points to tempList
+
+	list[length] = val; // (last element of resized array) add value
+
+	length++;  //increase number of elements
+
+	//return List(list, length);
+
+}
+
+
 ostream& operator <<(ostream& os, const List& x) {
 	os << "{";
 	for (int i = 0; i < x.length; i++)
 	{
-		if(i != x.length-1) //values except for the last value will have a "," after it
+		if (i != x.length - 1) //values except for the last value will have a "," after it
 			os << x[i] << ", ";
 		else {
 			os << x[i];
@@ -109,51 +152,30 @@ const istream& operator >> (istream& in, List& x) {
 	cout << "Enter length of list: \n";
 	in >> x.length;
 	x.list = new int[x.length];
-	
+
+	//Extract values one by one
 	/*for (int i = 0; i < x.length; i++)
 	{
 		cout << "enter value " << i << " for list: ";
 		in >> x.list[i];
 	}
 	*/
-	
-	////Other way to extract ex. {0, 1, 2} 
+
+	////Other way to extract ex. 0 1 2 
+	cout << "Enter values for list ex. 0 1 2 for length 3\n";
 	int val;
 	for (int i = 0; i < x.length; i++)
 	{
 		in >> val;
-		if (val == ' ') 
+		if (val == ' ')
 			continue;
 		else
 			x.list[i] = val;
 	}
-	
-	
-
-	//string input;
-	//in.ignore();
-	//getline(in, input);
-	//int count = 0;
-	//for (char& c : input) {
-	//	///////////////CAN'T READ if more than one digit cant read 54
-	//	if (count < x.length) {
-	//		if (c == '{' || c == '}' || c == ',' || c == ' ' || c == '\0') {
-	//			continue;
-	//		}
-	//		else {
-	//			
-	//			x.list[count] = c - '0';
-	//			count++;
-	//		}
-	//	}
-
-	//}
-
 
 
 
 	return in;
-
 }
 
 

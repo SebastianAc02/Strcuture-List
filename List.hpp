@@ -22,8 +22,12 @@ public:
 	void appendSeq(int*, int);
 	void removeAt(int, int);
 	int GetLength() const;
+	void SetLength(int);
 
+	void operator--(int);
+	void operator+(int);
 	const int& operator[](int) const;
+	
 
 	friend ostream& operator<< (ostream& os, const List&);
 	friend const istream& operator>> (istream& in, List&);
