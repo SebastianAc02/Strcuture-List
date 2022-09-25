@@ -19,6 +19,7 @@ public:
 	List(List&&); //move constructor
 	~List();
 
+	int partition( int start, int end);
 	void insert(int, int);
 	void append(int);
 	void appendSeq(int*, int);
@@ -26,13 +27,11 @@ public:
 	void removeAt(int);
 	int GetLength() const;
 	void SetLength(int);
-<<<<<<< HEAD
-=======
 
+	void quickSort(int start, int end);
 	void Sort();
 	int Search(int); //returns index it is located at
 
->>>>>>> d54f4f8b76ff694bc1bcb59e4f99903584e39199
 	void operator-(int);
 	void operator--(int);
 	void operator+(int);
