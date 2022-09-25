@@ -70,7 +70,6 @@ void List::removeAt(int index) {
 			list[length - 1] = 0;
 			length--;
 		}
-
 	}
 }
 
@@ -92,7 +91,7 @@ void List::removeFirstorAll(int val) {
 			}
 		}
 	}
-	else if (input == 1) { // NOT WORKING
+	else if (input == 1) { 
 		for (int i = 0; i < length; i++)
 		{
 			if (list[i] == val) {
@@ -135,15 +134,23 @@ void List::appendSeq(int* arr, int arrSize) {
 
 }
 
-void List::Sort() {
-	for (int i = 0; i < length; i++)
-	{
-		for (int j = 0; j < length - 1; j++)
-		{
-			if (list[j] > list[j + 1]) {
-				swap(list[j], list[j + 1]);
-			}
+int List::partitionForQuickSort(int leftIndex, int rightIndex) {
+	int pivot = arr[rightIndex];
+	int i = leftIndex - 1;
+	for (int j = left; i <= rightIndex; i++) {
+		if (arr[j] < pivot) {
+			swap(&arr[++i], &arr[j]);
 		}
+	}
+	swap(&arr[i + 1], &arr[rightIndex]);
+	return i + 1;
+}
+
+void List::quickSort(int leftIndex, int rightIndex) {
+	if (leftIndex < rightIndex) {
+		int partitionIndex = partitionForQuickSort(leftIndex, rightIndex);
+		quickSort(leftIndex, partitionIndex - 1);
+		quickSort(partitionIndex, rightIndex);
 	}
 }
 
@@ -180,8 +187,6 @@ void List:: operator--(int) {
 
 	length--;
 
-
-
 }
 
 void List:: operator+(int val) {
@@ -209,9 +214,6 @@ void List:: operator+(int* arr) {
 	{
 		append(arr[i]);
 	}*/
-
-
-
 }
 
 const List& List::operator=(const List& li) {

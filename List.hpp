@@ -27,7 +27,7 @@ public:
 	int GetLength() const;
 	void SetLength(int);
 
-	void Sort();
+	int partitionForQuickSort(int leftIndex, int rightIndex);
 	int Search(int); //returns index it is located at
 
 	void operator-(int);
