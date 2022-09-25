@@ -85,6 +85,14 @@ void List::appendSeq(int* arr, int arrSize) {
 	}
 
 }
+
+
+void List::operator- (int ){
+
+	delete [] list;
+	list = nullptr;
+	length = 0;
+}
 const int& List :: operator[](int index) const {
 	return list[index];
 }

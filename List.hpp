@@ -26,6 +26,7 @@ public:
 	int GetLength() const;
 	void SetLength(int);
 
+	void operator-(int);
 	void operator--(int);
 	void operator+(int);
 	void operator+(int*);
