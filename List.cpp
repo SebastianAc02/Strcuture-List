@@ -87,6 +87,7 @@ void List::appendSeq(int* arr, int arrSize) {
 }
 
 
+
 void List::operator- (int ){
 
 	delete [] list;
