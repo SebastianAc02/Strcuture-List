@@ -25,8 +25,8 @@ public:
 	~List();
 
 
-
-	void insert(int, int);
+	int access(int);
+	void insert(int, int); //index, value
 	void append(int);
 	void appendSeq(int*, int);
 	void removeFirstorAll(int);

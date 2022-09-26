@@ -52,6 +52,10 @@ int List::GetLength() const {
 void List::SetLength(int len) {
 	length = len;
 }
+
+int List:: access(int index) {
+	return list[index];
+}
 void List::insert(int index, const int val) {
 	list[index] = val;
 }
