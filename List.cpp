@@ -4,9 +4,13 @@
 #include <string>
 using namespace std;
 
-List::List() : length(0), list(nullptr) {}
 
-List::List(int* arr, int arrSize) : length(arrSize), list(new int[arrSize]) {
+
+ template <typename T>
+List<T>::List() : length(0), list(nullptr) {}
+
+ template <typename T>
+List<T>::List(T* arr, int arrSize) : length(arrSize), list(new T[arrSize]) {
 
 	for (int i = 0; i < length; i++)
 	{
@@ -14,7 +18,9 @@ List::List(int* arr, int arrSize) : length(arrSize), list(new int[arrSize]) {
 	}
 
 }
-List::List(int n, int v) :length(n), list(new int[n]) {
+
+ template <typename T>
+List<T>::List(int n, T v) :length(n), list(new T[n]) {
 	if (n < 0) {
 		throw "ERROR: the number has to be a positive integer";
 	}
@@ -25,7 +31,9 @@ List::List(int n, int v) :length(n), list(new int[n]) {
 
 
 }
-List::List(List& li) { //Copy constructor
+
+ template <typename T>
+List<T>::List(List& li) { //Copy constructor
 	length = li.length;
 	list = new int[length];
 	for (int i = 0; i < length; i++)
@@ -34,28 +42,38 @@ List::List(List& li) { //Copy constructor
 	}
 }
 
-List::List(List&& li) { //Move Constructor
+
+ template <typename T>
+List<T>::List(List&& li) { //Move Constructor
 	length = li.length;
 	li.length = 0;
 	list = li.list;
 	li.list = nullptr;
 }
-List::~List() {
+
+ template <typename T>
+List<T>::~List() {
 	delete[] list;
 	list = nullptr;
 }
 
 
-int List::GetLength() const {
+ template <typename T>
+int List<T>::GetLength() const {
 	return length;
 }
-void List::SetLength(int len) {
+ template <typename T>
+void List<T>::SetLength(int len) {
 	length = len;
 }
-void List::insert(int index, const int val) {
+
+ template <typename T>
+void List<T>::insert(int index, const T val) {
 	list[index] = val;
 }
-void List::removeAt(int index) {
+
+ template <typename T>
+void List<T>::removeAt(int index) {
 
 	for (int i = 0; i < length; i++)
 	{
@@ -70,7 +88,8 @@ void List::removeAt(int index) {
 	}
 }
 
-void List::removeFirstorAll(int val) {
+ template <typename T>
+void List<T>::removeFirstorAll(T val) {
 	int input;
 	cout << "Remove first of an item enter 0 or Remove all occurences of an item enter 1\n";
 	cin >> input;
@@ -106,8 +125,8 @@ void List::removeFirstorAll(int val) {
 }
 
 
-
-void List::append(int val) {
+ template <typename T>
+void List<T>::append(T val) {
 	//Ex. original size of 10
 	int* tempList = new int[length + 1]; //Ex. size of 11 is 0-10th elements
 	for (int i = 0; i < length; i++)
@@ -126,7 +145,9 @@ void List::append(int val) {
 
 	length++;  //increase number of elements
 }
-void List::appendSeq(int* arr, int arrSize) {
+
+ template <typename T>
+void List<T>::appendSeq(T* arr, int arrSize) {
 
 	int* tempList = new int[length + arrSize];
 	for (unsigned int i = 0; i < length; i++) {
@@ -148,8 +169,8 @@ void List::appendSeq(int* arr, int arrSize) {
 
 
 
-
-int List::Search(int val, int low, int high) {
+ template <typename T>
+int List<T>::Search(T val, int low, int high) {
 	for (int i = low; i < high; i++)
 
 	{
@@ -160,17 +181,21 @@ int List::Search(int val, int low, int high) {
 
 }
 
-void List::operator- (int) {
+ template <typename T>
+void List<T>::operator- (T) {
 
 	delete[] list;
 	list = nullptr;
 	length = 0;
 }
-const int& List :: operator[](int index) const {
+
+ template <typename T>
+const int& List<T> :: operator[](int index) const {
 	return list[index];
 }
 
-void List:: operator--(int) {
+ template <typename T>
+void List<T>:: operator--(T) {
 
 	int* tempList = new int[length - 1];
 	for (int i = 0; i < length - 1; i++)
@@ -186,11 +211,14 @@ void List:: operator--(int) {
 
 }
 
-int* List::getList()
+ template <typename T>
+T* List<T>::getList()
 {
 	return list;
 }
-void List:: operator+(int val) {
+
+ template <typename T>
+void List<T>:: operator+(T val) {
 
 	int* tempList = new int[length + 1];
 	for (int i = 0; i < length; i++)
@@ -210,7 +238,9 @@ void List:: operator+(int val) {
 
 
 }
-List List:: operator+(const List& li) {
+
+ template <typename T>
+List<T> List<T>:: operator+(const List<T>& li) {
 int* tempList = new int[length + li.length];
 	for (unsigned int i = 0; i < length; i++) {
 		tempList[i] = list[i];
@@ -225,7 +255,9 @@ int* tempList = new int[length + li.length];
 	
 }
 
-const List& List::operator=(const List& li) {
+// List <T>??&
+ template <typename T>
+const List<T>& List<T>::operator=(const List<T>& li) {
 	if (this != &li) {
 		length = li.length;
 		if (list != nullptr) {
@@ -241,7 +273,8 @@ const List& List::operator=(const List& li) {
 	return *this;
 }
 
-List& List::operator=(List&& li) {
+ template <typename T>
+List<T>& List<T>::operator=(List<T>&& li) {
 	if (this != &li) {
 		swap(list, li.list);
 		swap(length, li.length);
@@ -249,8 +282,8 @@ List& List::operator=(List&& li) {
 	return *this;
 }
 
-
-ostream& operator <<(ostream& os, const List& x) {
+ template <typename T>
+ostream& operator <<(ostream& os, const List<T>& x) {
 	os << "{";
 	for (int i = 0; i < x.length; i++)
 	{
@@ -265,7 +298,8 @@ ostream& operator <<(ostream& os, const List& x) {
 
 }
 
-const istream& operator >> (istream& in, List& x) {
+ template <typename T>
+const istream& operator >> (istream& in, List<T>& x) {
 	cout << "Enter length of list: \n";
 	in >> x.length;
 	x.list = new int[x.length];
@@ -288,7 +322,8 @@ const istream& operator >> (istream& in, List& x) {
 	return in;
 }
 
-int List::partition(int start, int end)
+ template <typename T>
+int List<T>::partition(int start, int end)
 {
 
 	int pivot = list[start];
@@ -324,7 +359,8 @@ int List::partition(int start, int end)
 	return pivotIndex;
 }
 
-void List::quickSort(int start, int end) //end must be length-1S
+ template <typename T>
+void List<T>::quickSort(int start, int end) //end must be length-1S
 {
 
 	// base case

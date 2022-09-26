@@ -5,31 +5,31 @@ using namespace std;
 
 
 
-//template <typename T>
+template <typename T>
 class List {
 
 private:
 	int partition(int start, int end);
 protected:
-	int* list;
+	T* list;
 	int length;
 	
 
 
 public:
 	List();
-	List(int, int);
-	List(int*, int);
+	List(int, T);
+	List(T*, int);
 	List(List&);//copy constructor
 	List(List&&); //move constructor
 	~List();
 
 
 
-	void insert(int, int);
-	void append(int);
-	void appendSeq(int*, int);
-	void removeFirstorAll(int);
+	void insert(int, T);
+	void append(T);
+	void appendSeq(T*, int);
+	void removeFirstorAll(T);
 	void removeAt(int);
 	int GetLength() const;
 	void SetLength(int);
@@ -38,12 +38,12 @@ public:
 
 
 	virtual void quickSort(int start, int end) final;
-	virtual int Search(int, int, int); //returns index it is located at
+	virtual int Search(T, int, int); //returns index it is located at
 
-	int* getList(); 
-	void operator-(int);
-	void operator--(int);
-	void operator+(int);
+	T* getList(); 
+	void operator-(T);
+	void operator--(T);
+	void operator+(T);
 	List operator+(const List&);
 	const List& operator=(const List&); //assignment operator
 	List& operator=(List&&); //move assignment operator
