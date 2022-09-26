@@ -14,15 +14,17 @@ List::List(int* arr, int arrSize) : length(arrSize), list(new int[arrSize]) {
 	}
 
 }
-List::List(int n, int v) :length(n), list(new int[n]) {
+List::List(int n, int v) :length(n), list(nullptr) {
 	if (n < 0) {
-		throw "ERROR: the number has to be a positive integer";
+		const char* exception = "ERROR: the number has to be a positive integer";
+		throw exception;
 	}
+	list = new int[n];
 	for (int i = 0; i < n; i++)
 	{
 		list[i] = v;
 	}
-
+	
 
 }
 List::List(List& li) { //Copy constructor
