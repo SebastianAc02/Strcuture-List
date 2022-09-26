@@ -26,7 +26,7 @@ public:
 
 
 	T access(int);
-	void insert(int, int); //index, value
+	void insert(int, T); //index, value
 	void append(T);
 	void appendSeq(T*, int);
 	void removeFirstorAll(T);
@@ -51,9 +51,10 @@ public:
 	void insertAt(int);
 
 
-
-	friend ostream& operator<< (ostream& os, const List&);
-	friend const istream& operator>> (istream& in, List&);
+	template <typename T>
+	friend ostream& operator<< (ostream& os, const List<T>&);
+	template <typename T>
+	friend const istream& operator>> (istream& in, List<T>&);
 };
 
 

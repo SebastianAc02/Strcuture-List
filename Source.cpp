@@ -19,7 +19,7 @@ int main() {
 	cout << "Enter your unsorted list of integers: \n";
 	cin	>> list2;
 
-	list1.Sort(0, list1.GetLength()-1); //To make it a sortedlist
+	list1.quickSort(0, list1.GetLength()-1); //To make it a sortedlist
 	cout << "Sorted List: " << list1 << endl;
 	cout << "Unsorted List: " << list2 << endl;
 	List list3 = list1 + list2;
