@@ -73,8 +73,19 @@ T List<T>:: access(int index) {
 }
 
 template <typename T>
-void List<T>::insert(int index, const int val) {
-	list[index] = val;
+void List<T>::insert(int index, const T val) {
+
+
+	if(index>length || index <= 0)
+		return false;
+	
+	for (int i = index; i < length; i++)
+		list[i + 1] = arr[i];
+
+	list[index] = item;
+	return true;
+
+
 }
 
  template <typename T>
@@ -385,10 +396,4 @@ void List<T>::quickSort(int start, int end) //end must be length-1S
 	// Sorting the right part
 	quickSort(p + 1, end);
 }
-
-template<typename T>
-void insertAt(int){
-	
-}
-
 

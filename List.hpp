@@ -26,7 +26,7 @@ public:
 
 
 	T access(int);
-	void insert(int, int); //index, value
+	void insert(int, T); //index, value
 	void append(T);
 	void appendSeq(T*, int);
 	void removeFirstorAll(T);
@@ -48,12 +48,12 @@ public:
 	const List& operator=(const List&); //assignment operator
 	List& operator=(List&&); //move assignment operator
 	const int& operator[](int) const;
-	void insertAt(int);
+
 
 
 
 	friend ostream& operator<< (ostream& os, const List&);
-	friend const istream& operator>> (istream& in, List&);
+	friend const istream& operator>>  (istream& in, List&);
 };
 
 

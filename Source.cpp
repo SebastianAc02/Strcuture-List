@@ -19,7 +19,7 @@ int main() {
 	cout << "Enter your unsorted list of integers: \n";
 	cin	>> list2;
 
-	list1.Sort(0, list1.GetLength()-1); //To make it a sortedlist
+	list1.quickSort(0, list1.GetLength()-1); //To make it a sortedlist
 	cout << "Sorted List: " << list1 << endl;
 	cout << "Unsorted List: " << list2 << endl;
 	List list3 = list1 + list2;
@@ -79,7 +79,7 @@ int main() {
 
 	//11. Extracting a list from an input stream
 	cout << "Extracting a list from an input stream: " << endl;
-	List list4;
+	List<int> list4;
 	cin >> list4;
 	cout << list4 << endl;
 
@@ -96,7 +96,7 @@ int main() {
 	//"+": Appends a list to the list. 
 	cout << " + : Appends a list to the list: ";
 	cout << list3 << " + " << list4 << " = " << endl;
-	List list5 = list3 + list4;
+	List<int> list5 = list3 + list4;
 	cout << list5 << endl;
 
 	//"-": Removes all the items of a list from the list.

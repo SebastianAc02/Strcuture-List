@@ -5,7 +5,7 @@
 using namespace std;
 
 template <typename T>
-class SortedList : public List {
+class SortedList : public List<T> {
 
 private:
 	//	int partition(int arr[], int start, int end);
