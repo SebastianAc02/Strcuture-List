@@ -1,37 +1,41 @@
 #include "SortedList.hpp"
+#include "List.hpp"
  template <typename T>
-SortedList<T>::SortedList() :List() {}
-
- template <typename T>
-SortedList<T>::SortedList(T* arr, int arrSize) : List(arr, arrSize) {}
-
+SortedList<T>::SortedList() :List<T>() {}
 
  template <typename T>
-SortedList<T>::SortedList(int n, T v) : List(n, v) {}
+SortedList<T>::SortedList(T* arr, int arrSize) : List<T>(arr, arrSize) {}
 
 
-// low should be index 0  and high is the array length 
  template <typename T>
-int SortedList<T>::Search(T target, int low, int high) 
+SortedList<T>::SortedList(int n, T v) : List<T>(n, v) {}
+
+
+// low should be index 0  and high is the array length
+ template <typename T>
+int SortedList<T>::Search(T target, int low, int high)
 {
-	if (high >= low)
-	{
-		int mid = low + (high - low) / 2;
+   
+    if (high >= low)
+    {
+        int mid = low + (high - low) / 2;
 
-		if (list[mid] == target)
-			return mid;
+        if((this -> list[mid]) == target)
+            return mid;
+  
+          
 
-		//searching left side
-		if (list[mid] > target)
-			return Search(target, low, mid - 1);
+        //searching left side
+       if((this -> list[mid] ) > target)
+            return Search(target, low, mid - 1);
+        
+        //searching right hand
+        return Search(target, mid + 1, low);
 
-		//searching right hand
-		return Search(target, mid + 1, low);
-
-	}
+    }
 
 
-	return -1;
+    return -1;
 
 
 
