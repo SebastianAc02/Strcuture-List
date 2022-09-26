@@ -218,6 +218,7 @@ List List:: operator+(const List& li) {
 int* tempList = new int[length + li.length];
 	for (unsigned int i = 0; i < length; i++) {
 		tempList[i] = list[i];
+
 	}
 	for (unsigned int i = 0, tempIndex = length; i < li.length; i++, tempIndex++) {
 		tempList[tempIndex] = li.list[i];

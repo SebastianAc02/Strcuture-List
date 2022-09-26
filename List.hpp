@@ -40,7 +40,6 @@ public:
 	virtual void quickSort(int start, int end) final;
 	virtual int Search(int, int, int); //returns index it is located at
 
-
 	int* getList(); 
 	void operator-(int);
 	void operator--(int);

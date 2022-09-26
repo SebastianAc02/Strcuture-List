@@ -1,0 +1,12 @@
+
+Comparisson beetwen a static array and a dynamic array or List
+
+The static array is a data strcuture with contiguous memory allocation
+the main disadvantage of it, is after we declare the length we cant change it 
+also if we want to add another element we would have to create a completely new array,
+somethoing difficult at compilation time.
+
+The main advantages of using a List instead is we still have that contiguous memory 
+however we can shrink or extend our list as long as we want. We can change the length
+and also we may add or remove items very easily .
+
