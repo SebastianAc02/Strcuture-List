@@ -67,8 +67,15 @@ void List<T>::SetLength(int len) {
 	length = len;
 }
 
+<<<<<<< HEAD
  template <typename T>
 void List<T>::insert(int index, const T val) {
+=======
+int List:: access(int index) {
+	return list[index];
+}
+void List::insert(int index, const int val) {
+>>>>>>> 445ecae117d71e455e05857f88e336bcfecf0903
 	list[index] = val;
 }
 
