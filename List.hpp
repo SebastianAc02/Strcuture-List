@@ -8,11 +8,13 @@ using namespace std;
 //template <typename T>
 class List {
 
-
-
+private:
+	int partition(int start, int end);
 protected:
 	int* list;
 	int length;
+	
+
 
 public:
 	List();
@@ -22,7 +24,8 @@ public:
 	List(List&&); //move constructor
 	~List();
 
-	
+
+
 	void insert(int, int);
 	void append(int);
 	void appendSeq(int*, int);
@@ -32,10 +35,9 @@ public:
 	void SetLength(int);
 
 
-	
-	virtual void quickSort(int start, int end) final;
-	int partition(int start, int end);
 
+
+	virtual void quickSort(int start, int end) final;
 	virtual int Search(int, int, int); //returns index it is located at
 
 	int* getList(); 
