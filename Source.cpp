@@ -19,13 +19,7 @@ int main() {
 	cout << "Enter your unsorted list of integers: \n";
 	cin	>> list2;
 
-<<<<<<< HEAD
-	list1.quickSort(0, list1.GetLength()-1);
-	cout << "SortedList: " << list1 << endl;
-	cout << "UnsortedList: " << list2 << endl;
-	List<int> list3 = list1 + list2;
-=======
-	list1.quickSort(0, list1.GetLength()-1); //To make it a sortedlist
+	list1.Sort(0, list1.GetLength()-1); //To make it a sortedlist
 	cout << "Sorted List: " << list1 << endl;
 	cout << "Unsorted List: " << list2 << endl;
 	List list3 = list1 + list2;
@@ -37,7 +31,6 @@ int main() {
 	//2. Appending a single item 
 	cout << "Appending a single item 3 to List: ";
 	list3.append(3);
->>>>>>> 445ecae117d71e455e05857f88e336bcfecf0903
 	cout << list3 << endl;
 
 	//3. Appending a sequence of items
@@ -121,10 +114,10 @@ int main() {
 	int arr1[2] = {0, 1};
 	List list6(arr1, 2);
 
-	//A constructor that creates an object including “n” occurrences of value “v”; where “n” is
+	//A constructor that creates an object including ï¿½nï¿½ occurrences of value ï¿½vï¿½; where ï¿½nï¿½ is
 	//a positive integer.An exception may be thrown by this method.
 
-	cout << "A constructor that creates an object including “n” occurrences of value v: " << endl;
+	cout << "A constructor that creates an object including ï¿½nï¿½ occurrences of value v: " << endl;
 	List list7(3, 2);
 	cout << "A list with 3 occurences of the value 2 "<< list7 << endl;
 

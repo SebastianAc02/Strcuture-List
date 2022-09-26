@@ -67,15 +67,13 @@ void List<T>::SetLength(int len) {
 	length = len;
 }
 
-<<<<<<< HEAD
- template <typename T>
-void List<T>::insert(int index, const T val) {
-=======
-int List:: access(int index) {
+template <typename T>
+T List<T>:: access(int index) {
 	return list[index];
 }
-void List::insert(int index, const int val) {
->>>>>>> 445ecae117d71e455e05857f88e336bcfecf0903
+
+template <typename T>
+void List<T>::insert(int index, const int val) {
 	list[index] = val;
 }
 
@@ -290,7 +288,8 @@ List<T>& List<T>::operator=(List<T>&& li) {
 }
 
  template <typename T>
-ostream& operator <<(ostream& os, const List<T>& x) {
+ostream& operator <<(ostream& os, const List<T>& x) 
+{
 	os << "{";
 	for (int i = 0; i < x.length; i++)
 	{
@@ -328,6 +327,9 @@ const istream& operator >> (istream& in, List<T>& x) {
 
 	return in;
 }
+
+
+
 
  template <typename T>
 int List<T>::partition(int start, int end)
@@ -384,6 +386,9 @@ void List<T>::quickSort(int start, int end) //end must be length-1S
 	quickSort(p + 1, end);
 }
 
-
+template<typename T>
+void insertAt(int){
+	
+}
 
 

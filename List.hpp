@@ -25,19 +25,11 @@ public:
 	~List();
 
 
-<<<<<<< HEAD
-
-	void insert(int, T);
+	T access(int);
+	void insert(int, int); //index, value
 	void append(T);
 	void appendSeq(T*, int);
 	void removeFirstorAll(T);
-=======
-	int access(int);
-	void insert(int, int); //index, value
-	void append(int);
-	void appendSeq(int*, int);
-	void removeFirstorAll(int);
->>>>>>> 445ecae117d71e455e05857f88e336bcfecf0903
 	void removeAt(int);
 	int GetLength() const;
 	void SetLength(int);
@@ -56,6 +48,7 @@ public:
 	const List& operator=(const List&); //assignment operator
 	List& operator=(List&&); //move assignment operator
 	const int& operator[](int) const;
+	void insertAt(int);
 
 
 
