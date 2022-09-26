@@ -70,7 +70,6 @@ void List::removeAt(int index) {
 			list[length - 1] = 0;
 			length--;
 		}
-
 	}
 }
 
@@ -92,7 +91,7 @@ void List::removeFirstorAll(int val) {
 			}
 		}
 	}
-	else if (input == 1) { // NOT WORKING
+	else if (input == 1) {
 		for (int i = 0; i < length; i++)
 		{
 			if (list[i] == val) {
@@ -135,25 +134,21 @@ void List::appendSeq(int* arr, int arrSize) {
 
 }
 
-void List::Sort() {
-	for (int i = 0; i < length; i++)
-	{
-		for (int j = 0; j < length - 1; j++)
-		{
-			if (list[j] > list[j + 1]) {
-				swap(list[j], list[j + 1]);
-			}
-		}
-	}
-}
 
+<<<<<<< HEAD
 	 int List::Search(int val, int low, int high) {
 	for (int i = 0; i < length; i++)
+=======
+
+int List::Search(int val, int low, int high) {
+	for (int i = low; i < high; i++)
+>>>>>>> 1181ddc5a5e5f24df800c04fe25e4fd58a23eef3
 	{
 		if (list[i] == val) {
 			return i;
 		}
 	}
+
 }
 
 void List::operator- (int) {
@@ -179,8 +174,6 @@ void List:: operator--(int) {
 	list = tempList;
 
 	length--;
-
-
 
 }
 
@@ -208,14 +201,16 @@ void List:: operator+(int val) {
 
 
 }
-void List:: operator+(int* arr) {
-	/*for (int i = 0; i < (sizeof(arr)/sizeof (*arr)); i++)
-	{
-		append(arr[i]);
-	}*/
-
-
-
+List List:: operator+(const List& li) {
+int* tempList = new int[length + li.length];
+	for (unsigned int i = 0; i < length; i++) {
+		tempList[i] = list[i];
+	}
+	for (unsigned int i = 0, tempIndex = length; i < li.length; i++, tempIndex++) {
+		tempList[tempIndex] = li.list[i];
+	}
+	return *this;
+	
 }
 
 const List& List::operator=(const List& li) {
@@ -288,57 +283,57 @@ const istream& operator >> (istream& in, List& x) {
 	return in;
 }
 
-int List::partition( int start, int end)
+int List::partition(int start, int end)
 {
- 
-    int pivot = list[start];
- 
-    int count = 0;
-    for (int i = start + 1; i <= end; i++) {
-        if (list[i] <= pivot)
-            count++;
-    }
- 
-    // Giving pivot element its correct position
-    int pivotIndex = start + count;
-    swap(list[pivotIndex], list[start]);
- 
-    // Sorting left and right parts of the pivot element
-    int i = start, j = end;
- 
-    while (i < pivotIndex && j > pivotIndex) {
- 
-        while (list[i] <= pivot) {
-            i++;
-        }
- 
-        while (list[j] > pivot) {
-            j--;
-        }
- 
-        if (i < pivotIndex && j > pivotIndex) {
-            swap(list[i++], list[j--]);
-        }
-    }
- 
-    return pivotIndex;
+
+	int pivot = list[start];
+
+	int count = 0;
+	for (int i = start + 1; i <= end; i++) {
+		if (list[i] <= pivot)
+			count++;
+	}
+
+	// Giving pivot element its correct position
+	int pivotIndex = start + count;
+	swap(list[pivotIndex], list[start]);
+
+	// Sorting left and right parts of the pivot element
+	int i = start, j = end;
+
+	while (i < pivotIndex && j > pivotIndex) {
+
+		while (list[i] <= pivot) {
+			i++;
+		}
+
+		while (list[j] > pivot) {
+			j--;
+		}
+
+		if (i < pivotIndex && j > pivotIndex) {
+			swap(list[i++], list[j--]);
+		}
+	}
+
+	return pivotIndex;
 }
 
 void List::quickSort(int start, int end)
 {
- 
-    // base case
-    if (start >= end)
-        return;
- 
-    // partitioning the array
-    int p = partition( start, end);
- 
-    // Sorting the left part
-    quickSort( start, p - 1);
- 
-    // Sorting the right part
-    quickSort( p + 1, end);
+
+	// base case
+	if (start >= end)
+		return;
+
+	// partitioning the array
+	int p = partition(start, end);
+
+	// Sorting the left part
+	quickSort(start, p - 1);
+
+	// Sorting the right part
+	quickSort(p + 1, end);
 }
 
 
