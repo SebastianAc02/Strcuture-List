@@ -76,20 +76,40 @@ T List<T>:: access(int index) {
 	return list[index];
 }
 
+/*
 template <typename T>
-void List<T>::insert(int index, const T val) {
+bool List<T>::insert(int index, const T val) {
+
+	const pointer = new T[length+1];
+
+	for (int i = 0, int j = 0 ;i < length+1; i++, j++)
+	{
+		if(index != i )
+		pointer[i] = list[j];
+		else
+		{pointer[i] = val;
+		
+
+		}
+
+	}
 
 
-	if(index>length || index <= 0)
-		return false;
 	
-	for (int i = index; i < length; i++)
-		list[i + 1] = arr[i];
-
-	list[index] = item;
-	return true;
 
 
+}*/
+
+
+template <typename T>
+void List<T>::insert(const int index, const T val) {
+    if (index > length || index <= 0)
+        throw "ERROR: out_of_index";
+    
+    for (int i = index; i < length; i++)
+        list[i + 1] = list[i];
+
+    list[index] = val;
 }
 
  template <typename T>
