@@ -1,9 +1,10 @@
 ﻿  List.cpp
-C:\Users\ansnu\source\repos\CMPT 2300 Lab 1\CMPT 2300 Lab 1\List.cpp(135,29): warning C4018: '<': signed/unsigned mismatch
-C:\Users\ansnu\source\repos\CMPT 2300 Lab 1\CMPT 2300 Lab 1\List.cpp(138,49): warning C4018: '<': signed/unsigned mismatch
-C:\Users\ansnu\source\repos\CMPT 2300 Lab 1\CMPT 2300 Lab 1\List.cpp(212,29): warning C4018: '<': signed/unsigned mismatch
-C:\Users\ansnu\source\repos\CMPT 2300 Lab 1\CMPT 2300 Lab 1\List.cpp(215,49): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ansnu\source\repos\CMPT 2300 Lab 1\CMPT 2300 Lab 1\List.cpp(132,29): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ansnu\source\repos\CMPT 2300 Lab 1\CMPT 2300 Lab 1\List.cpp(135,49): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ansnu\source\repos\CMPT 2300 Lab 1\CMPT 2300 Lab 1\List.cpp(215,29): warning C4018: '<': signed/unsigned mismatch
+C:\Users\ansnu\source\repos\CMPT 2300 Lab 1\CMPT 2300 Lab 1\List.cpp(218,49): warning C4018: '<': signed/unsigned mismatch
+  SortedList.cpp
   Source.cpp
   Generating Code...
-C:\Users\ansnu\source\repos\CMPT 2300 Lab 1\CMPT 2300 Lab 1\List.cpp(162): warning C4715: 'List::Search': not all control paths return a value
+C:\Users\ansnu\source\repos\CMPT 2300 Lab 1\CMPT 2300 Lab 1\List.cpp(161): warning C4715: 'List::Search': not all control paths return a value
   CMPT 2300 Lab 1.vcxproj -> C:\Users\ansnu\source\repos\CMPT 2300 Lab 1\x64\Debug\CMPT 2300 Lab 1.exe

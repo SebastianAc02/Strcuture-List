@@ -56,9 +56,6 @@ void List::insert(int index, const int val) {
 	list[index] = val;
 }
 void List::removeAt(int index) {
-	/*list[length] = list[index];
-	cout << list[length];
-	length--;*/
 
 	for (int i = 0; i < length; i++)
 	{
@@ -150,14 +147,11 @@ void List::appendSeq(int* arr, int arrSize) {
 }
 
 
-<<<<<<< HEAD
-	 int List::Search(int val, int low, int high) {
-	for (int i = 0; i < length; i++)
-=======
+
 
 int List::Search(int val, int low, int high) {
 	for (int i = low; i < high; i++)
->>>>>>> 1181ddc5a5e5f24df800c04fe25e4fd58a23eef3
+
 	{
 		if (list[i] == val) {
 			return i;
@@ -329,7 +323,7 @@ int List::partition(int start, int end)
 	return pivotIndex;
 }
 
-void List::quickSort(int start, int end) //end must be length-1
+void List::quickSort(int start, int end) //end must be length-1S
 {
 
 	// base case

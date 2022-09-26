@@ -32,30 +32,5 @@ int main() {
 
 	
 	
-<<<<<<< HEAD
-	int location = li.Search(55,0 ,0);
-	cout << "It is in position " << location << " of the List" << endl;
 
-	li.Sort();
-	cout << "Sorted List: " << li << endl;
-
-	cout << "Enter value to remove \n";
-	cin >> input;
-	li.removeFirstorAll(input);
-	cout << li<< endl;
-
-	cout << "Enter value to remove \n";
-	cin >> input;
-	li.removeFirstorAll(input);
-	cout << li << endl;
-
-
-
-
-	
-
-
-
-=======
->>>>>>> 1181ddc5a5e5f24df800c04fe25e4fd58a23eef3
 }
