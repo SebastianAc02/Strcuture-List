@@ -1,12 +1,18 @@
 #include "SortedList.hpp"
+ template <typename T>
+SortedList<T>::SortedList() :List() {}
 
-SortedList::SortedList() :List() {}
-SortedList::SortedList(int* arr, int arrSize) : List(arr, arrSize) {}
-SortedList::SortedList(int n, int v) : List(n, v) {}
+ template <typename T>
+SortedList<T>::SortedList(T* arr, int arrSize) : List(arr, arrSize) {}
+
+
+ template <typename T>
+SortedList<T>::SortedList(int n, T v) : List(n, v) {}
 
 
 // low should be index 0  and high is the array length 
-int SortedList::Search(int target, int low, int high) 
+ template <typename T>
+int SortedList<T>::Search(T target, int low, int high) 
 {
 	if (high >= low)
 	{

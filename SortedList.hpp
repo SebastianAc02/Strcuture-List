@@ -4,7 +4,7 @@
 
 using namespace std;
 
-//template <typename T>
+template <typename T>
 class SortedList : public List {
 
 private:
@@ -12,13 +12,13 @@ private:
 public:
 
 	SortedList();
-	SortedList(int, int);
-	SortedList(int*, int);
+	SortedList(int, T);
+	SortedList(T*, int);
 
 
 
 
-	int Search(int target, int low, int high) override;
+	int Search(T target, int low, int high) override;
 
 
 	//void quickSort(int arr[], int start, int end);

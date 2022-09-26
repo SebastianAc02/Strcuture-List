@@ -10,8 +10,8 @@ int main() {
 	////PART 3
 	///////////////////
 
-	SortedList list1;
-	List list2;
+	SortedList<int> list1;
+	List<int> list2;
 	
 
 	cout << "Enter your sorted list of integers: \n";
@@ -19,7 +19,7 @@ int main() {
 	cout << "Enter your unsorted list of integers: \n";
 	cin	>> list2;
 
-	list1.quickSort(0, list1.GetLength()-1); //To make it a sortedlist
+	list1.Sort(0, list1.GetLength()-1); //To make it a sortedlist
 	cout << "Sorted List: " << list1 << endl;
 	cout << "Unsorted List: " << list2 << endl;
 	List list3 = list1 + list2;
@@ -115,6 +115,7 @@ int main() {
 	cout << "A constructor that creates an object including the elements of a C++ array: " << endl;
 	int arr1[2] = {0, 1};
 	List list6(arr1, 2);
+<<<<<<< HEAD
 	cout << list6 << endl;
 	//A constructor that creates an object including “n” occurrences of value “v”; where “n” is
 	//a positive integer.An exception may be thrown by this method.
@@ -129,6 +130,15 @@ int main() {
 		cout << exception;
 	}
 	//cout << "A list with 3 occurences of the value 2 "<< list7 << endl;
+=======
+
+	//A constructor that creates an object including ï¿½nï¿½ occurrences of value ï¿½vï¿½; where ï¿½nï¿½ is
+	//a positive integer.An exception may be thrown by this method.
+
+	cout << "A constructor that creates an object including ï¿½nï¿½ occurrences of value v: " << endl;
+	List list7(3, 2);
+	cout << "A list with 3 occurences of the value 2 "<< list7 << endl;
+>>>>>>> 870d0778a08bd099a0f095b915865bb91cd3a783
 
 	//Getters and Setters
 	//cout << "Length = " << list7.GetLength();
