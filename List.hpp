@@ -29,9 +29,10 @@ public:
 	void SetLength(int);
 
 	void quickSort(int start, int end);
-	void Sort();
-	int Search(int); //returns index it is located at
+	 void  Sort();
+	virtual int Search(int , int , int ); //returns index it is located at
 
+	int* getList(); 
 	void operator-(int);
 	void operator--(int);
 	void operator+(int);

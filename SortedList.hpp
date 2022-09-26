@@ -16,7 +16,7 @@ public:
 	SortedList(int*, int);
 
 	
-	int binarySearch( int target, int low, int high);
+	 int  Search ( int target, int low, int high)  override  ;
 	
 	//void quickSort(int arr[], int start, int end);
 	

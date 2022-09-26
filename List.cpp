@@ -147,7 +147,7 @@ void List::Sort() {
 	}
 }
 
-int List::Search(int val) {
+	 int List::Search(int val, int low, int high) {
 	for (int i = 0; i < length; i++)
 	{
 		if (list[i] == val) {
@@ -184,6 +184,10 @@ void List:: operator--(int) {
 
 }
 
+int* List::getList()
+{
+	return list;
+}
 void List:: operator+(int val) {
 
 	int* tempList = new int[length + 1];

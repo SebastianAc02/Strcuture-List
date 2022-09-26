@@ -15,7 +15,7 @@ int main() {
 	cout << "List: "<< li << endl;
 	
 	
-	int location = li.Search(55);
+	int location = li.Search(55,0 ,0);
 	cout << "It is in position " << location << " of the List" << endl;
 
 	li.Sort();
@@ -31,6 +31,10 @@ int main() {
 	li.removeFirstorAll(input);
 	cout << li << endl;
 
+
+
+
+	
 
 
 
