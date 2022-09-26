@@ -135,14 +135,9 @@ void List::appendSeq(int* arr, int arrSize) {
 }
 
 
-<<<<<<< HEAD
-	 int List::Search(int val, int low, int high) {
-	for (int i = 0; i < length; i++)
-=======
 
 int List::Search(int val, int low, int high) {
 	for (int i = low; i < high; i++)
->>>>>>> 1181ddc5a5e5f24df800c04fe25e4fd58a23eef3
 	{
 		if (list[i] == val) {
 			return i;
@@ -205,10 +200,12 @@ List List:: operator+(const List& li) {
 int* tempList = new int[length + li.length];
 	for (unsigned int i = 0; i < length; i++) {
 		tempList[i] = list[i];
+
 	}
 	for (unsigned int i = 0, tempIndex = length; i < li.length; i++, tempIndex++) {
 		tempList[tempIndex] = li.list[i];
 	}
+	
 	return *this;
 	
 }
