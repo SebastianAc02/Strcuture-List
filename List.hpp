@@ -34,13 +34,20 @@ public:
 	int GetLength() const;
 	void SetLength(int);
 
+<<<<<<< HEAD
+	void quickSort(int start, int end);
+	 void  Sort();
+	virtual int Search(int , int , int ); //returns index it is located at
+=======
 
 
 	virtual void quickSort(int start, int end) final;
 
 
 	virtual int Search(int, int, int); //returns index it is located at
+>>>>>>> 1181ddc5a5e5f24df800c04fe25e4fd58a23eef3
 
+	int* getList(); 
 	void operator-(int);
 	void operator--(int);
 	void operator+(int);
