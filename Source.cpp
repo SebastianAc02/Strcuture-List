@@ -99,20 +99,38 @@ int main() {
 	List<int> list5 = list3 + list4;
 	cout << list5 << endl;
 
-	//"-": Removes all the items of a list from the list.
-	cout << " - : Removes all the items of a list from the list: ";
-	list3-2;
-	cout << list3 << endl;
+	
 
 	//. "[]": Implements the index access operation.
 	cout << " []: Implements the index access operation: " << endl;
 	cout << "Accessing index 1 of the List: " << list3[1] << endl;
+
+	//"-": Removes all the items of a list from the list.
+	cout << " - : Removes all the items of a list from the list: ";
+	list3 - 2;
+	cout << list3 << endl;
 
 	//CONSTRUCTORS;
 	//A constructor that creates an object including the elements of a C++ array
 	cout << "A constructor that creates an object including the elements of a C++ array: " << endl;
 	int arr1[2] = {0, 1};
 	List list6(arr1, 2);
+<<<<<<< HEAD
+	cout << list6 << endl;
+	//A constructor that creates an object including “n” occurrences of value “v”; where “n” is
+	//a positive integer.An exception may be thrown by this method.
+
+	cout << "A constructor that creates an object including n occurrences of value v: " << endl;
+
+	try {
+		List list7(3, 2);
+		cout << "A list with 3 occurences of the value 2 " << list7 << endl;
+	}
+	catch(char* exception) {
+		cout << exception;
+	}
+	//cout << "A list with 3 occurences of the value 2 "<< list7 << endl;
+=======
 
 	//A constructor that creates an object including ï¿½nï¿½ occurrences of value ï¿½vï¿½; where ï¿½nï¿½ is
 	//a positive integer.An exception may be thrown by this method.
@@ -120,6 +138,7 @@ int main() {
 	cout << "A constructor that creates an object including ï¿½nï¿½ occurrences of value v: " << endl;
 	List list7(3, 2);
 	cout << "A list with 3 occurences of the value 2 "<< list7 << endl;
+>>>>>>> 870d0778a08bd099a0f095b915865bb91cd3a783
 
 	//Getters and Setters
 	//cout << "Length = " << list7.GetLength();

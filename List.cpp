@@ -19,16 +19,20 @@ List<T>::List(T* arr, int arrSize) : length(arrSize), list(new T[arrSize]) {
 
 }
 
+
  template <typename T>
 List<T>::List(int n, T v) :length(n), list(new T[n]) {
+
 	if (n < 0) {
-		throw "ERROR: the number has to be a positive integer";
+		const char* exception = "ERROR: the number has to be a positive integer";
+		throw exception;
 	}
+	list = new int[n];
 	for (int i = 0; i < n; i++)
 	{
 		list[i] = v;
 	}
-
+	
 
 }
 
@@ -271,7 +275,7 @@ int* tempList = new int[length + li.length];
 	
 }
 
-// List <T>??&
+
  template <typename T>
 const List<T>& List<T>::operator=(const List<T>& li) {
 	if (this != &li) {

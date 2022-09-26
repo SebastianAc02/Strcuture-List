@@ -51,9 +51,16 @@ public:
 
 
 
+<<<<<<< HEAD
 
 	friend ostream& operator<< (ostream& os, const List&);
 	friend const istream& operator>>  (istream& in, List&);
+=======
+	template <typename T>
+	friend ostream& operator<< (ostream& os, const List<T>&);
+	template <typename T>
+	friend const istream& operator>> (istream& in, List<T>&);
+>>>>>>> 9b1de00e8a0e7463a3bca946de47adeedf8cd8b9
 };
 
 
