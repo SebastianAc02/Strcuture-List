@@ -5,33 +5,21 @@ using namespace std;
 
 
 int main() {
-	 
-	int arr[5] = { 1, 54, 55, 54, 55 };
+	///////////////////
+	////PART 3
+	///////////////////
 
-	List li;
-	int input;
+	List li(5, 2);
+	List li2(3, 1);
+
+	List b = li + li2;
+
+	cout << b;
 	
-	li.appendSeq(arr, 5);
-	cout << "List: "<< li << endl;
+
+	
+
+
 	
 	
-	int location = li.Search(55);
-	cout << "It is in position " << location << " of the List" << endl;
-
-	//li.Sort();
-	cout << "Sorted List: " << li << endl;
-
-	cout << "Enter value to remove \n";
-	cin >> input;
-	li.removeFirstorAll(input);
-	cout << li<< endl;
-
-	cout << "Enter value to remove \n";
-	cin >> input;
-	li.removeFirstorAll(input);
-	cout << li << endl;
-
-
-
-
 }

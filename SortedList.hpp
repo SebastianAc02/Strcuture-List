@@ -5,20 +5,20 @@
 using namespace std;
 
 //template <typename T>
-class SortedList: public List {
+class SortedList : public List {
 
-private :
-//	int partition(int arr[], int start, int end);
+private:
+	//	int partition(int arr[], int start, int end);
 public:
 
 	SortedList();
 	SortedList(int, int);
 	SortedList(int*, int);
 
-	
-	int binarySearch( int target, int low, int high);
-	
+
+	int Search(int target, int low, int high) override;
+
 	//void quickSort(int arr[], int start, int end);
-	
+
 };
 

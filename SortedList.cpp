@@ -6,7 +6,7 @@ SortedList::SortedList(int n, int v) : List(n, v) {}
 
 
 // low should be index 0  and high is the array length 
-int SortedList::binarySearch(int target, int low, int high)
+int SortedList::Search(int target, int low, int high) 
 {
 	if (high >= low)
 	{
@@ -17,10 +17,10 @@ int SortedList::binarySearch(int target, int low, int high)
 
 		//searching left side
 		if (list[mid] > target)
-			return binarySearch(target, low, mid - 1);
+			return Search(target, low, mid - 1);
 
 		//searching right hand
-		return binarySearch(target, mid + 1, low);
+		return Search(target, mid + 1, low);
 
 	}
 
