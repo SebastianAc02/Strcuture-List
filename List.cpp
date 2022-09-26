@@ -107,6 +107,9 @@ void List::removeFirstorAll(int val) {
 		}
 	}
 }
+
+
+
 void List::append(int val) {
 	//Ex. original size of 10
 	int* tempList = new int[length + 1]; //Ex. size of 11 is 0-10th elements
@@ -127,11 +130,23 @@ void List::append(int val) {
 	length++;  //increase number of elements
 }
 void List::appendSeq(int* arr, int arrSize) {
-	for (int i = 0; i < arrSize; i++)
-	{
-		append(arr[i]);
-	}
 
+	int* tempList = new int[length + arrSize];
+	for (unsigned int i = 0; i < length; i++) {
+		tempList[i] = list[i];
+	}
+	for (unsigned int i = 0, tempIndex = length; i < arrSize; i++, tempIndex++) {
+		tempList[tempIndex] = arr[i];
+	}
+	
+	delete[] list;
+	list = nullptr;
+
+	list = tempList;
+
+	length = length + arrSize;
+
+	
 }
 
 
@@ -200,7 +215,9 @@ int* tempList = new int[length + li.length];
 	for (unsigned int i = 0, tempIndex = length; i < li.length; i++, tempIndex++) {
 		tempList[tempIndex] = li.list[i];
 	}
-	return *this;
+	
+	
+	return List(tempList, (length+li.length));
 	
 }
 
@@ -249,15 +266,8 @@ const istream& operator >> (istream& in, List& x) {
 	in >> x.length;
 	x.list = new int[x.length];
 
-	//Extract values one by one
-	/*for (int i = 0; i < x.length; i++)
-	{
-		cout << "enter value " << i << " for list: ";
-		in >> x.list[i];
-	}
-	*/
 
-	////Other way to extract ex. 0 1 2 
+
 	cout << "Enter values for list ex. 0 1 2 for length 3\n";
 	int val;
 	for (int i = 0; i < x.length; i++)
@@ -310,7 +320,7 @@ int List::partition(int start, int end)
 	return pivotIndex;
 }
 
-void List::quickSort(int start, int end)
+void List::quickSort(int start, int end) //end must be length-1
 {
 
 	// base case
